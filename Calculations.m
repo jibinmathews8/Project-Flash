@@ -44,8 +44,7 @@ V: Input Voltage
 
 
 
-
-
+% Known Values
 HP = 10; % Motor Horsepower
 Motor_V = 480; % Motor Voltage
 Motor_Phase = 3; % 3 Phase Motor
