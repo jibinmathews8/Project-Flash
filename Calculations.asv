@@ -26,17 +26,16 @@ X_t: Transformer Leakage Reactance
 V: Input Voltage
 %}
 
-%% Motor Starting Current Equation:
+%% Lowest Voltage during start up Equation:
 %{
-I_Start = (X_LR) / (X_1 + X_t + X_LR) * V
+V_Start = (X_LR) / (X_1 + X_t + X_LR) * V
 
-I_Start: Starting Current (Given from Wattmeter)
+V_Start: Lowest voltage (Given from Wattmeter)
+X_LR: Locked Rotor Reactance of the Motor
 X_1: Electric Utility Impedence (Can be useful during back calculations)
 X_t: Transformer Leakage Reactance 
 V: Input Voltage
 %}
-
-%% Actual Calculations
 
 
 
