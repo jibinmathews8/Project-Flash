@@ -36,44 +36,27 @@ X_t: Transformer Leakage Reactance
 V: Input Voltage
 %}
 
+%% Motor Starting Power Factor Calculation
+%{
+PF_Start = cos ( arctan( (X_1 + X_t + X_LR) / R_LR) )
+
+PF_Start: Motor Locked/ Starting Power Factor (10%-30%)
+R_LR: Resistive Locked rotor impedance
+X_1: Utility impedance
+X_t: Transformer Leakage reactance
+
+If X_1 or X_t is not avaliable
+
+PF_Start = cos ( arctan(X_LR / R_LR))
+%}
+
 %% Actual Calculations
-
-
-
-
-
-
+% Input Data from Motor
 
 % Known Values
 HP = 10; % Motor Horsepower
 Motor_V = 480; % Motor Voltage
 Motor_Phase = 3; % 3 Phase Motor
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
