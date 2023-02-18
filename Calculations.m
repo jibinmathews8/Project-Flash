@@ -50,13 +50,30 @@ If X_1 or X_t is not avaliable
 PF_Start = cos ( arctan(X_LR / R_LR))
 %}
 
-%% Actual Calculations
+%% Example Nameplate
 % Input Data from Motor
 
 % Known Values
-HP = 10; % Motor Horsepower
-Motor_V = 480; % Motor Voltage
+Motor_HP = 2000; % kW
+Motor_V = 4160; % V
+Motor_RPM = 1785; % RPM
 Motor_Phase = 3; % 3 Phase Motor
+Motor_freq = 60; % Hz
+Motor_SF = 1.15; % Service Factor
+Motor_FLA = 247; % Full Load Amps
+
+
+%% Equations Set up
+
+Motor_reactance = ((1000 * Motor_V)^2) / (2 * pi * Motor_freq * Motor_HP);  %Xm
+
+
+
+
+% Impedance of Motor Calculation
+% Zm = Xm / (Power Factor)
+
+
 
 
 
