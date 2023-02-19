@@ -53,7 +53,7 @@ PF_Start = cos ( arctan(X_LR / R_LR))
 %% Example Nameplate
 % Input Data from Motor
 
-% Known Values
+% Known Values from Motor
 Motor_HP = 2000; % kW
 Motor_V = 4160; % V
 Motor_RPM = 1785; % RPM
@@ -61,11 +61,32 @@ Motor_Phase = 3; % 3 Phase Motor
 Motor_freq = 60; % Hz
 Motor_SF = 1.15; % Service Factor
 Motor_FLA = 247; % Full Load Amps
+Motor_NEMA = (3.15+3.54)/2;
 
 
 %% Equations Set up
 
-Motor_reactance = ((1000 * Motor_V)^2) / (2 * pi * Motor_freq * Motor_HP);  %Xm
+Motor_Reactance = ((1000 * Motor_V)^2) / (2 * pi * Motor_freq * Motor_HP); %Xm
+Motor_Power = Motor_V * Motor_FLA; % Watts
+Motor_Power_kW = Motor_Power / 1000; %kW
+
+
+    
+
+% From Full Load Current find Power Factor
+% Motor_FLA = (HP * 746) / (Voltage * sqrt(3) * Efficency * Power Factor *
+% RPM)
+% Rearrange and solve for Power Factor
+
+Motor_SF_A = Motor_FLA * Motor_SF; % Service Factor Amps
+
+Motor_LRA = Motor_SF_A*5;
+
+I_Start = (Motor_NEMA * Motor_HP)/(sqrt(3)*Motor_V);
+
+
+
+
 
 
 
